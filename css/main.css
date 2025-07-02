@@ -1,0 +1,886 @@
+@charset "utf-8";
+
+/* Common(공통의) */
+html {
+    font-size: 10px; /* 계산하기 쉬운 숫자단위 */
+    --main-green: #00a287;
+    --main-blue: #005dad;
+    --sub-blue: #003483;
+    /* --h2-size: 6.4rem; */
+    /* font-size: 10px을 기준으로 6.4배 */
+
+}
+body {
+    font-family: 'Montserrat', 'SUIT', 'Pretendard', '맑은 고딕', sans-serif, 'Noto Serif KR';
+    color: #222;
+    font-size: 1.6rem;
+    
+}
+.container {padding: 0 6rem;}
+.blind {
+    display: block;width: 1px;height: 1px;overflow: hidden;
+}
+.point-txt {color: var(--main-green);font-weight: 700;}
+.main-link {
+    padding: 1.6rem 3.0rem;
+    font-size: 1.8rem;font-weight: 700;
+    border: 1px solid #FFF;
+}
+.main-link::after {
+    content: "\EA70";margin-left: 0.8rem;
+    font-family: "remixicon";font-size: 2rem;
+}
+.main-link:hover {background: #fff;color: #222;}
+.main-link:hover::after {color: var(--main-green);}
+
+main {margin-top: 12rem;}
+.index main {margin: 0;}
+
+section {padding: 14rem 0;}
+hgroup h2 {font-size: 6.4rem;font-weight: 700;}
+hgroup p {margin-top: 2.4rem;font-size: 2rem;}
+a {display: block;}
+[class|="mo"] {display: none;}
+
+@media screen and (max-width: 1440px) {
+    .container {padding: 0 4rem;}
+}
+@media screen and (max-width: 1280px) {
+    html {font-size: 9px;}
+}
+@media screen and (max-width: 1024px) {
+    html {font-size: 8px;}
+    .container {padding: 0 3rem;}
+}
+@media screen and (max-width: 768px) {
+    [class|="mo"] {display: block;}
+    [class|="pc"] {display: none;}
+}
+
+/* 스킵 네비게이션 */
+#skip-nav a {
+
+    position: fixed;left: 0;top: -5rem;
+    z-index: 9000;
+    padding: 1.6rem 2rem;
+    background: var(--sub-blue);color: #fff;
+}
+#skip-nav a:focus {top: 0;}
+#popup {
+    display: none;
+    /* 수정 끝나고 display 켜놓기 */
+    position: absolute;left: 3rem;top: 3rem;
+    z-index: 2000;
+    width: 55rem;background: #ddd;
+    border: 2px solid #fff;
+    transform: scale(0.3,0.3);opacity: 0;
+    animation: popup 0.8s forwards;
+}
+@keyframes popup {
+    100% {transform: scale(1,1);opacity: 1;}
+}
+
+#popup img {width: 100%;}
+#popup .popup-btn {
+    
+    display: flex;justify-content: space-between;
+    padding: 0.8rem 1rem;align-items: center;
+}
+#popup button {
+    font-size: 2.4rem;font-weight: 700;
+}
+#popup button::after {
+    content: "\EB99";font-family: 'remixicon';
+}
+
+/* header */
+/* 
+- header를 여러번 쓸 수 있지만 여러개를 쓸 경우 가장 상위 header에 id를 부여한다.
+- id는 헷갈릴 수 있으므로 태그 이름인 header, footer 그대로 쓰지 않는다.
+*/
+#header {
+    position: fixed;width: 100%;top: 0;
+    z-index: 1000;transition: all 0.5s;
+    color: #fff;
+}
+#header .container {
+    display: flex;flex-direction: row;justify-content: space-between;
+    align-items: center;height: 12rem;
+}
+/* 공통의 이름을 개별적으로 사용하면 혼동이 올 수 있음 */
+#header h1 a {
+    display: block;width: 17.8rem;height: 5rem;
+    background: url(../img/logo.svg) no-repeat;
+    background-size: 100% auto;transition: all 0.5s;
+}
+#gnb .dep1 {
+    display: flex;flex-direction: row;
+    justify-content: center;
+}
+#gnb .dep1>li {padding: 5rem 3rem;}
+#gnb .dep1>li>a {
+   font-size: 2rem;font-weight: 700;
+}
+#gnb .dep2 {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    position: absolute;left: 0;right: 0;
+    top: 12rem;border-top: 1px solid #e0e0e0;
+    background: #fff;color: #222;
+}
+#gnb .dep1>li:hover>a {
+    text-decoration: underline var(--main-green) 0.4rem;
+    text-underline-offset: 1rem;
+}
+
+
+#gnb .dep1>li:hover .dep2 {display: flex;}
+
+#gnb .dep1>li:hover .dep2>li {
+    padding: 5rem 2rem;
+    width: 18rem;
+    border-left: 1px solid #e0e0e0;
+}
+#gnb .dep1>li:hover .dep2>li:last-child {border-right: 1px solid #e0e0e0;}
+
+#gnb .dep2 a {
+    font-size: 1.8rem;font-weight: 700;
+}
+#gnb .dep2 li:hover {background: #fafafa;}
+#gnb .dep2 li:hover>a {
+    text-decoration: underline #4d4d4d;
+    text-underline-offset: 3px;
+}
+#gnb .dep3 {
+    display: flex;flex-direction: column;
+    padding-top: 2.4rem;gap: 1.6rem;
+}
+#gnb .dep3 li:hover a {color: #4d4d4d;}
+#gnb .dep3 a {
+    font-size: 1.6rem;font-weight: 600;
+    color: #6a6a6a;
+}
+
+.header-util {
+    display: flex;gap: 2.4rem;align-items: center;
+}
+.header-util .lang-wrap {position: relative;}
+.header-util .lang-wrap button {
+    display: flex;gap: 0.8rem;
+    font-size: 1.6rem;font-weight: 500;
+}
+.header-util .lang-wrap button::after {
+    content: "\EA4D"; font-family: "remixicon";
+    transition: transform 0.3s;
+}
+.header-util .lang-wrap.active button::after {
+    transform: rotate(180deg);
+    /* inline 요소에는 적용 안됨 */
+}
+.header-util .lang-wrap ul {
+    display: none;flex-direction: column;
+    position: absolute;gap: 1.5rem;
+    width: auto;padding: 1.4rem 2.4rem;left: 50%;
+    transform: translateX(-50%); top: 3rem;
+    border-radius: 1rem;background: rgba(255,255,255,0.9);
+    font-family: 'SUIT';
+    font-weight: 500;color: #4d4d4d;
+}
+.header-util .lang-wrap.active ul {display: flex;}
+
+.header-util .search-wrap>button {display: block;}
+.header-util .search-wrap .search-box {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;padding: 10rem 3rem;
+    position: absolute;left: 0;right: 0;top: 12rem;
+    gap: 2.6rem;
+    background: #fff;
+}
+.header-util .search-wrap.active .search-box {
+    display: flex;
+}
+
+.header-util .search-box h2 {
+    color: var(--main-green);font-size: 4rem;
+    font-weight: 800;
+}
+.header-util .search-box form {
+    display: flex;gap: 0.6rem;
+}
+.header-util .search-box form input {
+    height: 5.6rem;width: 48rem;
+    padding: 0rem 2.4rem;
+    border-radius: 0.5rem;
+    color: #222;background: #fafafa;
+}
+.header-util .search-box form input:focus {
+    outline: 2px solid var(--main-green);
+}
+.header-util .search-box form button {
+    width: 5.6rem;height: 5.6rem;
+    background: #222;color: #fafafa;
+    border-radius: 0.5rem;font-size: 2.2rem;
+}
+
+.header-util button {font-size: 2.4rem;}
+.header-util .allmenu-popup {
+    display: none;
+    position: fixed;left: 0;top: 0;right: 0;bottom: 0;
+    background: #fff;font-family: 'SUIT', sans-serif;
+}
+.header-util .allmenu-top {
+   position: absolute;left: 0;right: 0;
+   display: flex;justify-content: space-between;
+   padding: 4rem 6rem;
+   color: #222;
+}
+.header-util .allmenu-top a {
+   width: 17.8rem;height: 5.1rem;overflow: hidden;
+}
+.header-util .allmenu-top a img {width: 100%;}
+.header-util .allmenu-left {
+    display: flex;flex-direction: column;
+    justify-content: flex-end;
+    width: 30%;padding: 6rem;
+    background: url(../img/allmenu_bg.jpg) no-repeat center / cover;
+}
+.header-util .allmenu-left dl {
+    display: flex;flex-wrap: wrap;
+    /* dispaly는 grid도 문제없음 */
+    row-gap: 1.6rem;margin-bottom: 2.6rem;padding-bottom: 2.6rem;color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+.header-util .allmenu-left dt {width: 7rem;font-weight: 700;}
+.header-util .allmenu-left dd {width: calc(100% - 7rem);}
+.header-util .allmenu-left p {color: rgba(255, 255, 255, 0.7);}
+
+.header-util .allmenu-right {
+    flex-grow: 1;
+    padding: 10rem;padding-top: 14rem;
+    color: #222;
+}
+.header-util .allmenu-right .dep1 {
+    overflow: auto;height: 100%;
+    scrollbar-width: thin;scrollbar-color: #e0e0e0 transparent;
+}
+.header-util .allmenu-right .dep1>li {
+    display: flex;padding: 4.2rem 0;border-bottom: 1px solid #e0e0e0;
+}
+.header-util .allmenu-right .dep1>li:last-child {border: none;}
+.header-util .allmenu-right .dep1>li>a {
+    width: 22rem;font-size: 2.4rem;font-weight: 700;
+}
+.header-util .allmenu-right .dep1>li:hover>a {
+    color: var(--main-green);
+}
+.header-util .allmenu-right .dep2 {
+    display: flex;flex-wrap: wrap;flex-grow: 1;
+    row-gap: 3.6rem;
+}
+.header-util .allmenu-right .dep2>li {
+    width: 25%;flex-shrink: 0;font-size: 1.8rem;
+}
+.header-util .allmenu-right .dep2>li>a {
+   margin-bottom: 2rem;font-weight: 600;
+}
+.header-util .allmenu-right .dep3>li {
+    margin-bottom: 2rem;color: #4d4d4d;
+}
+.header-util .allmenu-right .dep3>li:hover {
+    text-decoration: underline; text-underline-offset: 2px; color: var(--main-green);
+}
+
+
+
+/* header scroll =>  */
+#header.scroll {
+    background: #fff;color: #222;
+}
+#header.scroll h1 a {
+    background-position: 0 bottom;
+}
+
+@media screen and (max-width: 1440px) {
+   .header-util .allmenu-right .dep2>li {
+      width: 33.3333%;
+      /* 글자 너비 줄어드는 현상 방지지 */
+   }
+}
+@media screen and (max-width: 1140px) {
+   .header-util .allmenu-top {background: #fff;}
+   .header-util .allmenu-top a img {transform: translateY(-50%);}
+   .header-util .allmenu-left {display: none;}
+   #gnb {display: none;}
+}
+@media screen and (max-width: 768px) {
+   .header-util .allmenu-top {padding: 2.4rem;}
+   .header-util .allmenu-right {padding: 3rem;padding-top: 8rem;}
+   /* .header-util .allmenu-right .dep1 {padding-top: 2rem;} */
+   .header-util .allmenu-right .dep1>li {display: block;padding-bottom: 2rem;}
+   .header-util .allmenu-right .dep1>li>a {font-size: 2.8rem;
+    padding-bottom: 2rem;}
+   .header-util .allmenu-right .dep2 {display: block;}
+   .header-util .allmenu-right .dep2>li {width: auto;}
+   .header-util .allmenu-right .dep2>li>a {
+    padding-top: 1rem;font-size: 2.2rem;
+    }
+    .header-util .allmenu-right .dep3>li {font-size: 2rem;}
+}
+
+
+/* footer */
+
+#footer {padding: 7.2rem 0;}
+#footer .footer-links {
+    display: flex;flex-direction: row;
+    justify-content: space-between;align-items: center;
+    font-size: 1.8rem;padding-bottom: 9.2rem;
+}
+#footer .footer-menu {
+    display: flex;gap: 4rem;color: #646464;
+}
+#footer .family-link {
+    display: flex;flex-direction: row;
+    align-items: center;gap: 6rem;
+    color: #222;
+}
+#footer .family-site {position: relative;}
+#footer .family-site button {font-weight: 700;}
+#footer .family-site button::after {
+    content: '\EA12';font-family: 'remixicon';
+    margin-left: 0.7rem;
+}
+#footer .family-site ul {
+    position: absolute;
+    /* display: none; */
+    height: 0;overflow: auto;scrollbar-width: none;
+    /* scrollbar-width: none; => 스크롤은 되지만 바는 안보임 */
+    left: 50%;transform: translateX(-50%);bottom: 4.5rem;
+    border-radius: 1rem;
+    background: #fff;color: #646464;
+    transition: all 0.5s;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+#footer .family-site ul.on {
+    height: 20rem;border: 1px solid #e0e0e0;
+    box-shadow: 4px 4px 4px rgba(0,0,0,.05);
+    /* 헷갈리면 태그.클래스 붙여쓸 수 있음(띄어쓰기하면 자손이 됨) */
+}
+
+#footer .family-site li {
+    white-space: nowrap;text-align: center;
+    margin: 2rem 3rem;font-size: 1.6rem;font-weight: 500;
+}
+#footer .footer-sns {
+    display: flex;flex-direction: row;gap: 2.4rem;
+    font-size: 2.4rem;
+}
+#footer .footer-sns a:nth-child(1)::after {
+    content: '\F2D4';font-family: 'remixicon';
+}
+#footer .footer-sns a:nth-child(2)::after {
+    content: '\EE65';font-family: 'remixicon';
+}
+#footer .footer-sns a:nth-child(3)::after {
+    content: '\F3E6';font-family: 'remixicon';
+}
+#footer .footer-sns a:nth-child(4)::after {
+    content: '\ECBA';font-family: 'remixicon';
+}
+/* \F2D4 \EE65 \F3E6 \ECBA */
+
+#footer .corp-info {
+    display: grid;grid-template-columns: 17.8rem auto;gap: 1rem 4rem;
+    font-family: 'SUIT', sans-serif;
+    font-size: 1.6rem;color: #6a6a6a;
+}
+#footer .corp-info a.footer-logo {
+    width: 17.8rem;height: 5.1rem;
+    overflow: hidden;grid-row: 1 / 3;
+    transform: translateY(-0.7rem);
+    /* background: #af5b5b; */
+}
+#footer .corp-info a.footer-logo img {
+    width: 100%;object-fit: cover;transform: translateY(-50%);
+}
+#footer .corp-info address {display: flex;}
+#footer .corp-info address span {
+    font-weight: 800;margin: 0 1.2rem 0 3.2rem;
+}
+
+@media screen and (max-width: 1440px) {
+    #footer .corp-info {position: relative;padding-bottom: 3rem;}
+    #footer .corp-info address span:first-child {margin-left: 0;}
+    #footer .corp-info address div {position: absolute;left: 0;bottom: 0;}
+}
+@media screen and (max-width: 768px) {
+    #footer {
+        display: flex;
+        padding: 5rem 0;
+    }
+    
+    #footer .footer-links {
+        display: flex;flex-direction: column-reverse;
+        justify-content: space-between;width: 90vw;
+        row-gap: 2.4rem;padding-bottom: 5.2rem;
+    }
+    #footer .family-link {
+        width: 100%;
+        justify-content: space-between;
+        
+    }
+    #footer .footer-menu {
+        width: 100%;justify-content: start;
+    }
+
+}
+@media screen and (max-width: 560px) {
+    
+    #footer .corp-info {
+        grid-template-columns: auto;
+    }
+}
+
+
+
+
+/* Main - index */
+/*** main-visual */
+#main-visual-wrap {
+    position: relative;overflow: hidden;
+}
+#main-visual-wrap .swiper-slide img {
+    width: 100%;height: 100vh;
+    object-fit: cover;
+}
+#main-visual-wrap .swiper-content {
+    /* position: absolute;left: 50%;top: 50%;
+    transform: translate(-50%,-50%);width: 100%; */
+    display: flex;flex-direction: column;gap: 4rem;
+    justify-content: center;align-items: center;text-align: center;
+    position: absolute;left: 0;right: 0;top: 0;bottom: 0;
+
+    color: #fff;z-index: 10;
+}
+#main-visual-wrap .swiper-content strong {
+    font-size: 5.6rem;font-weight: 800;
+    line-height: 1.25;
+}
+/* #main-visual-wrap .swiper-content {} */
+#main-visual-wrap .swiper-content span {
+    font-size: 2.4rem;font-weight: 500;
+    line-height: 1.25;
+}
+#main-visual-wrap .swiper-navigation-wrap {
+    width: 100%;height: 1px;
+    position: relative;
+    /* vw 단위는 스크롤 범위를 포함하므로 %단위 사용 */
+}
+#main-visual-wrap .swiper-navigation-wrap button {
+    position: absolute;bottom: 0;
+}
+#main-visual-wrap .swiper-navigation-wrap .swiper-prev {
+    left: 8rem;opacity: 0.5;
+}
+#main-visual-wrap .swiper-navigation-wrap .swiper-next {
+    right: 8rem;opacity: 0.5;
+    transform: rotateY(180deg);
+}
+/* #main-visual-wrap .swiper-navigation-wrap img {} */
+#main-visual-wrap .swiper-navigation-wrap .progress {
+    width: 100%;height: 100%;overflow: hidden;
+    background: rgba(255,255,255,0.2);
+}
+#main-visual-wrap .swiper-navigation-wrap .bar {
+    width: 22rem;height: 100%;background: #fff;
+    transform: translateX(-100%);
+    animation: progress var(--animationDuration) linear infinite;
+}
+#main-visual-wrap .swiper-controls-wrap {
+    width: 100%;display: flex;gap: 1.6rem;justify-content: center;
+    align-items: center;    
+}
+#main-visual-wrap .swiper-controls-wrap button {
+    font-size: 2.4rem;
+}
+#main-visual-wrap .swiper-controls-wrap .btn-play {
+    display: none;
+}
+#main-visual-wrap .swiper-controls-wrap .btn-play::after {
+    content: "\F008";font-family: 'remixicon';
+}
+#main-visual-wrap .swiper-controls-wrap .btn-stop {
+    display: block;
+}
+#main-visual-wrap .swiper-controls-wrap .btn-stop::after {
+    content: "\EFD5";font-family: 'remixicon';
+}
+#main-visual-wrap .swiper-pagination {
+    position: static;width: auto;
+    
+}
+#main-visual-wrap .swiper-pagination span {
+    width: 1rem;height: 1rem;
+    border: 1px solid #fff;border-radius: 50%;
+    background: transparent;opacity: 1;
+}
+#main-visual-wrap .swiper-pagination .swiper-pagination-bullet-active {
+    background: #fff;
+}
+
+
+
+.quickmenu-wrap  {
+    display: flex;flex-wrap: wrap;
+    position: absolute;left: -1px;right: 0;bottom: 0;
+    color: #e0e0e0;z-index: 20;
+}
+.quickmenu-wrap a {
+    display: flex;flex-direction: row;
+    gap: 2rem;align-items: center;
+    width: 25%;padding: 4.5rem 6rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+}
+.quickmenu-wrap a img {width: 4rem;height: 4rem;}
+.quickmenu-wrap a span {
+    flex-grow: 1;font-size: 2rem;
+}
+.quickmenu-wrap a::after {
+    content: "\EA70";font-family: "remixicon";font-size: 2.4rem;
+}
+.quickmenu-wrap a:hover {
+    background: var(--main-green);
+}
+@media screen and (max-width: 1280px) {
+    .quickmenu-wrap a {padding: 3rem 4rem;}
+}
+@media screen and (max-width: 840px) {
+    .quickmenu-wrap a {width: 50%;}
+}
+
+
+/*** only one earth */
+.earth-wrap {
+    display: flex;flex-direction: column;align-items: center;text-align: center;
+}
+.earth-wrap hgroup {align-self: stretch;}
+.earth-wrap h2 {
+    width: 100%;height: 7.3rem;
+    background: url(../img/sec02_title.png) center / auto 100% no-repeat;
+}
+.earth-wrap .img-box {margin-top: 6rem;}
+.earth-wrap .img-box img {width: 100%;} 
+/* 이미지 width 빼먹으면 가로스크롤 생김*/
+
+@media screen and (max-width:1024px) {
+    .earth-wrap h2 {height: 5.3rem;}
+}
+@media screen and (max-width:768px) {
+    .earth-wrap h2 {height: 4.8rem;}
+}
+
+/* Program */
+.program-wrap .point-txt {font-size: 2.4rem;}
+.program-wrap .program-content {
+    display: flex;flex-direction: row;flex-wrap: wrap;gap: 2.4rem;
+}
+.program-wrap .program-content>* {
+    width: calc(25% - 1.6rem);overflow: hidden;
+    border-radius: 1rem;
+}
+.program-wrap .program-content>*:nth-child(3n+1) {width: calc(50% - 1.6rem);}
+.program-wrap .program-content hgroup {padding-left: 6rem;}
+.program-wrap .program-content hgroup p {line-height: 1.65em;}
+/* .program-wrap .program-content img {width: 100%;} 밑에 같은 요소 있으니 제외해야 함 */
+
+
+.program-wrap .program-content a {position: relative;}
+.program-wrap .program-content a span {
+    position: absolute;left: 0;top: 0;right: 0;bottom: 0;
+    font-size: 2.8rem;font-weight: 700;color: #fff;
+    background: rgba(0,0,0,.5);transition: all .5s;
+    display: flex;align-items: flex-end;padding: 3rem;gap: 0.8rem;
+}
+.program-wrap .program-content a span::after {
+    content: "\EA70";font-family: "remixicon";
+}
+.program-wrap .program-content img {
+    width: 100%;height: 100%;object-fit: cover;
+    transition: all .5s;
+    /* opacity: .6; */
+}
+.program-wrap .program-content a:hover img {
+    transform: scale(1.2);
+    /* opacity: 1; */
+}
+.program-wrap .program-content a:hover span {
+    background: rgba(0,0,0,0);
+}
+/* 
+    - background에 검정을 주고 img에 oppacity를 줘서 투명도 조절
+    - span의 글자 뒤로 background를 줘서 투명도 조절
+    두가지 방법 모두 사용가능 
+*/
+@media screen and (max-width:1440px) {
+    .program-wrap .program-content hgroup {padding-left: 3rem;}
+    .program-wrap .program-content a span {padding: 1.4rem;}
+}
+@media screen and (max-width:1140px) {
+    .program-wrap .program-content hgroup {width: 100% !important;padding: 0;}
+    .program-wrap .program-content a {width: calc(50% - 1.2rem);height: 30rem;}
+    .program-wrap .program-content .logo-item {display: none;}
+}
+@media screen and (max-width:560px) {
+    .program-wrap .program-content a {height: 20rem;}   
+}
+/* @media screen and (max-width:430px)  */
+@media screen and (max-width:510px) {
+    .program-wrap .program-content {
+        flex-direction: column;flex-wrap: nowrap;
+    }  
+    .program-wrap .program-content a {width: 100% !important;}   
+}
+
+
+/* faculty */
+.faculty-wrap {
+    background: url(../img/sec04_bg.jpg) center / cover no-repeat;color: #fff;overflow-x: hidden;
+}
+.faculty-wrap hgroup {
+    display: flex;flex-direction: column;align-items: center;
+    margin-bottom: 4.8rem;
+}
+.faculty-wrap hgroup p {margin: 2.4rem 0 3.2rem;}
+.faculty-wrap ul {
+    /* gap: 7rem; */
+    transition-timing-function: linear;
+}
+.faculty-wrap li {
+    display: flex;flex-direction: column;align-items: center;
+    width: 21rem;text-align: center;
+}
+.faculty-wrap .thumb-img {
+    display: flex;flex-direction: row;
+    align-items: flex-end;
+    height: 32rem;overflow: hidden;
+    border-radius: 20rem;
+    background: rgba(0, 0, 0, 0.1);
+}
+.faculty-wrap .thumb-img img {
+    width: 100%;filter: grayscale(1);
+    transition: all 0.2s;
+}
+
+.faculty-wrap .thumb-img img:hover {
+    filter: grayscale(0);
+}
+.faculty-wrap li strong {
+    margin-top: 1.4rem;margin-bottom: 1rem;
+    font-size: 1.8rem;font-weight: 700;
+}
+.faculty-wrap li span {line-height: 1.4;}
+
+
+/* news */
+.news-wrap {display: flex;padding-bottom: 30rem;}
+.news-wrap img {
+    width: 100%;height: 100%;object-fit: cover;
+}
+.news-wrap .tab-btns {
+    display: flex;flex-direction: row;justify-content: space-between;width: 100%;
+    padding-top: 5rem;
+}
+.news-wrap .tab-btns .btn-box {
+    display: flex;flex-direction: row;gap: 3rem;padding-bottom: 1rem;
+}
+.news-wrap .tab-btns .btn-box button {font-size: 2rem;color: #aaa;}
+.news-wrap .tab-btns .btn-box .active {
+    color: #222;font-weight: 700;font-weight: 800;text-decoration: underline var(--main-green) 0.4rem;text-underline-offset: 1rem;
+}
+.news-wrap .tab-btns .more-link {font-size: 1.8rem;font-weight: 700;}
+.news-wrap .tab-btns .more-link::after {
+    content: "\EA70";font-family: 'remixicon';font-weight: 400;
+    margin-left: 1rem;
+}
+.news-wrap .tab-contents .cont-box {
+    display: none;margin: 3rem 0;
+}
+.news-wrap .tab-contents .cont-box:first-child {display: block;}
+.news-wrap .tab-contents .cont-box ul {
+    display: flex;gap: 4rem;
+}
+.news-wrap .tab-contents .cont-box li {
+    width: calc(25% - 4.5rem);height: 10rem;
+}
+.news-wrap .tab-contents .cont-box .thumb-img {
+    aspect-ratio: 5 / 3;margin-bottom: 4rem;
+    border-radius: 1rem;overflow: hidden;
+}
+.news-wrap .tab-contents .cont-box .news-cate {
+    font-size: 1.8rem;font-weight: 700;
+    color: var(--main-green);
+}
+.news-wrap .tab-contents .cont-box p {
+    font-size: 2rem;font-weight: 700;line-height: 3rem;
+    text-align: center;
+}
+.news-wrap .cont-box .news-bt {
+    display: flex;flex-direction: column;
+    justify-content: space-between;
+    height: 15rem;
+}
+
+
+
+
+
+/* banner-content */
+.banner-wrap {padding: 0;}
+.banner-wrap .flow-content {
+    display: flex;flex-direction: row;overflow: hidden;
+}
+.banner-wrap .flow-content img {
+    animation: flow 6s linear infinite;
+}
+
+@keyframes flow {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+}
+
+.banner-wrap .banner-content {
+    display: flex;flex-direction: column;
+    align-items: center;overflow: hidden;
+    padding: 10rem 6rem;
+    border-radius: 1.2rem;color: #fff;
+    background: url(../img/sec06_bg.jpg) center / cover no-repeat;text-align: center;position: relative;z-index: 0;
+}
+.banner-wrap .banner-content::after {
+    content: "";z-index: -1;
+    position: absolute;left: 0;top: 0;right: 0;bottom: 0;
+    background: rgba(0,0,0,.3);
+    /* ::after로 적었지만 배경을 덮는 가상요소라서 ::before로 써도 상관없음 */
+}
+.banner-wrap .txt-box {
+    font-size: 1.8rem;font-weight: 700;
+}
+.banner-wrap .txt-box .txt-big {
+    margin-top: 1.5rem;font-size: 3.2rem;
+}
+.banner-wrap .progress-wrap {
+    display: flex;flex-direction: row;align-items: center;gap: 1.5rem;
+    width: 100%;
+}
+.banner-wrap .progress {
+    height: 1px;flex-grow: 1;overflow: hidden;
+    background: rgba(255,255,255,0.4);
+    /* 선의 최소 단위기 때문에 rem이 아닌 1px */
+}
+.banner-wrap .progress .bar {
+    height: 100%;width: 22rem;background: #fff;
+    /* margin-left: -22rem; */
+    transform: translateX(-100%);
+}
+/* .banner-wrap:hover .bar {
+    animation: progress 1s;
+} => 마우스오버 대상은 자바스크립트로 
+    css 선택자는 부모, 형제에 hover 가능하지만
+    지금은 hover 대상인 버튼과 .bar의 관계를 css로 표현불가
+*/
+
+@keyframes progress {
+    0% {margin-left: 0;transform: translateX(-100%);}
+    100% {margin-left: 100%;transform: translateX(0);}
+}
+
+@media screen and (max-width: 768px) {
+    .banner-wrap .banner-content {padding: 6.4rem 2.4rem;}
+    .banner-wrap .txt-box {margin-bottom: 4rem;}
+    .banner-wrap .progress-wrap {display: none;}
+}
+
+
+
+
+/* Main - sub */
+
+.sub-container {
+    max-width: 1300px;margin: auto;
+    width: 94%;
+}
+.sub-visual {
+    display: flex;flex-direction: column;
+    justify-content: center;align-items: center;
+    height: 36rem;
+    border-radius: 1.2rem;color: #fff;
+    background-position: center;
+    background-size: cover;
+}
+.introduction .sub-visual {
+    background: url(../img/sub_visual01.jpg) center / cover;
+}
+.program .sub-visual {
+    background: url(../img/sub_visual03.jpg) center / cover;
+}
+
+.sub-visual h2 {
+    font-size: 4.8rem;font-weight: 900;
+}
+.sub-visual ol {
+    display: flex;gap: 3.2rem;
+    font-size: 1.6rem;font-weight: 700;
+    margin-top: 2.4rem;
+}
+.sub-visual button::after {
+    content: "\EA4E";font-family: "remixicon";margin-left: 1rem;font-weight: 400;
+}
+.sub-visual ol ul {
+    display: none;
+}
+/* .sub-visual li:first-child a::after  {
+    content: "\EE1F";font-family: "remixicon";font-weight: 400;font-size: 1.8rem;
+} html에 링크 직접 삽입
+    */
+.contents {
+    padding: 10rem 0 20rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.greeting .contents {
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.04));
+}
+
+@media screen and (max-width: 768px) {
+    .sub-visual {height: 28rem;}
+    .sub-visual ol {display: none;}
+}
+
+/* greeting */
+
+.greeting-wrap {
+    display: grid;grid-template-columns: auto 24rem;
+    gap: 5.6rem 7rem;
+}
+.greeting-wrap h3 {
+    grid-column: 1 / 3;padding-bottom: 4rem;
+    font-size: 4.4rem;font-weight: 700;
+    color: #222;text-align: center;border-bottom: 1px solid #e0e0e0;
+}
+.greeting-wrap h3 strong {
+    text-decoration: underline 1px var(--main-green);
+    text-underline-offset: 4.6rem;
+    /* 텍스트라인은 텍스트에 붙어있어서 padding-buttom보다 값을 더 줘야 맞음 */
+}
+.greeting-wrap .greeting-txt p {
+    margin-bottom: 3rem;
+    font-size: 2rem;color: #4d4d4d;line-height: 1.6;
+}
+.greeting-wrap .greeting-txt p:last-child strong {
+    font-size: 3.6rem;font-family: "Noto Serif KR";font-weight: 300;word-spacing: 2.4rem;color: #111;
+}
+
+/* news-wrap */

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- https://gggs.kaist.ac.kr/ -->
+    <title>녹색성장지속가능대학원</title>
+    <meta name="keyword" contact="kaist">
+
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <!-- Java Script -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+<div id="skip-nav">
+    <!-- gnb를 건너뛰기 위해 -->
+    <a href="#gnb">네비게이션 가기</a>
+    <a href="#main">본문 가기</a>
+</div>
+<div id="popup">
+    <img src="img/popup.jpg" width="550" alt="">
+    <div class="popup-btn">
+        <label for="popup-cookie">
+            <input type="checkbox" id="popup-cookie">오늘하루 그만보기
+        </label>
+        <button><span class="blind">팝업닫기</span></button>
+                
+    </div>
+</div>
+<div id="wrap" class="index">
+    <header id="header">
+        <div class="container">
+            <h1><a href="/"><span class="blind">녹색성장지속가능대학원</span></a></h1>
+            <nav id="gnb">
+                <!-- ul.dep1>li*6>a[href="#"]+ul.dep2>li*4>a[href="#"]+ul.dep3>li*3>a[href="#"] -->
+                <ul class="dep1">
+                    <li><a href="#">대학원 소개</a>
+                        <ul class="dep2">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">미션 밎 비전</a></li>
+                            <li><a href="#">연혁</a></li>
+                            <li><a href="#">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">구성원</a>
+                        <ul class="dep2">
+                            <li><a href="#">교수소개</a>
+                                <ul class="dep3">
+                                    <li><a href="#">전체 교수진</a></li>
+                                    <li><a href="#">탄소중립이행평가</a></li>
+                                    <li><a href="#">탄소중립기술시스템</a></li>
+                                    <li><a href="#">녹색에너지시스템</a></li>
+                                    <li><a href="#">자원순환기술시스템</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">재학생</a>
+                                <ul class="dep3">
+                                    <li><a href="#">석사과정</a></li>
+                                    <li><a href="#">박사과정</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">졸업생</a></li>
+                            <li><a href="#">사무실</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">입학</a>
+                        <ul class="dep2">
+                            <li><a href="#">프로그램</a>
+                                <ul class="dep3">
+                                    <li><a href="#">석사과정</a></li>
+                                    <li><a href="#">박사과정</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="#">교육</a>
+                        <ul class="dep2">
+                            <li><a href="#">개요</a></li>
+                            <li><a href="#">이수조건</a>
+                                <ul class="dep3">
+                                    <li><a href="#">석사과정</a></li>
+                                    <li><a href="#">박사과정</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">집중분야 이수제도</a></li>
+                            <li><a href="#">교과목 일람표</a>
+                                <ul class="dep3">
+                                    <li><a href="#">전체교과목</a></li>
+                                    <li><a href="#">현재학기 개설교과목</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">연구</a>
+                        <ul class="dep2">
+                            <li><a href="#">개요</a></li>
+                            <li><a href="#">분야</a>
+                                <ul class="dep3">
+                                    <li><a href="#">탄소중립이행평가</a></li>
+                                    <li><a href="#">탄소중립기술시스템</a></li>
+                                    <li><a href="#">녹색에너지시스템</a></li>
+                                    <li><a href="#">자원순환기술시스템</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">성과</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">커뮤니티</a>
+                        <ul class="dep2">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">Quarterly</a></li>
+                            <li><a href="#">미디어</a></li>
+                            <li><a href="#">학술 정보</a></li>
+                            <li><a href="#">교원채용</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>    
+            <div class="header-util">
+                <div class="lang-wrap">
+                    <button>KOR</button>
+                    <ul>
+                        <li><a href="#">KOR</a></li>
+                        <li><a href="#">ENG</a></li>
+                    </ul>
+                </div>
+                <div class="search-wrap">
+                    <button>
+                        <i class="ri-search-line"></i>
+                        <span class="blind">검색창 열기</span>
+                    </button>
+                    <div class="search-box">
+                        <h2>SEARCH</h2>
+                        <form>
+                            <input type="text" placeholder="필요한 정보를 검색해 보세요">
+                            <button type="submit">
+                                <i class="ri-search-line"></i>
+                                <span class="blind">검색하기</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="allmenu-wrap">
+                    <button class="allmenu-open">
+                        <i class="ri-menu-3-line"></i>
+                        <span class="blind">전체메뉴 열기</span>
+                    </button>
+                    <div class="allmenu-popup">
+                        <div class="allmenu-top">
+                            <a href="#">
+                                <img src="img/en_logo.svg" alt="GGGS Kaist">
+                            </a>
+                            <button class="allmenu-close">
+                                <i class="ri-close-line"></i>
+                                <span class="blind">전체메뉴 닫기</span>
+                            </button>
+                        </div>
+                        <div class="allmenu-left">
+                            <div class="allmenu-contact">
+                                <dl>
+                                    <dt>TEL</dt>
+                                    <dd>042-350-4162~4</dd>
+                                    <dt>E-mail</dt>
+                                    <dd>gggs@kaist.ac.kr</dd>
+                                </dl>
+                                <p>&copy; 2023. KAIST GGGS. ALL RIGHT RESERVED.</p>    
+                            </div>
+                        </div>
+                        <div class="allmenu-right">
+                            <ul class="dep1">
+                                <li><a href="#">대학원 소개</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">인사말</a></li>
+                                        <li><a href="#">미션 및 비전</a></li>
+                                        <li><a href="#">연혁</a></li>
+                                        <li><a href="#">오시는 길</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">구성원</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">교수소개</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">전체 교수진</a></li>
+                                                <li><a href="#">탄소중립이행평가</a></li>
+                                                <li><a href="#">탄소중립기술시스템</a></li>
+                                                <li><a href="#">녹색에너지시스템</a></li>
+                                                <li><a href="#">자원순환기술시스템</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">재학생</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">석사과정</a></li>
+                                                <li><a href="#">박사과정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">졸업생</a></li>
+                                        <li><a href="#">사무실</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">입학</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">프로그램</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">석사과정</a></li>
+                                                <li><a href="#">박사과정</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">교육</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">개요</a></li>
+                                        <li><a href="#">이수조건</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">석사과정</a></li>
+                                                <li><a href="#">박사과정</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">집중분야 이수제도</a></li>
+                                        <li><a href="#">교과목 일람표</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">전체교과목</a></li>
+                                                <li><a href="#">현재학기 개설교과목</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">연구</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">개요</a></li>
+                                        <li><a href="#">분야</a>
+                                            <ul class="dep3">
+                                                <li><a href="#">탄소중립이행평가</a></li>
+                                                <li><a href="#">탄소중립기술시스템</a></li>
+                                                <li><a href="#">녹색에너지시스템</a></li>
+                                                <li><a href="#">자원순환기술시스템</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">성과</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">커뮤니티</a>
+                                    <ul class="dep2">
+                                        <li><a href="#">공지사항</a></li>
+                                        <li><a href="#">Quarterly</a></li>
+                                        <li><a href="#">미디어</a></li>
+                                        <li><a href="#">학술 정보</a></li>
+                                        <li><a href="#">교원채용</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 링크는 인덱스페이지(경로의 루트) -->
+        </div>
+    </header>
+    <!-- <div class="container"></div> -->
+    <main id="main">
+        <div id="main-visual-wrap">
+            <!-- https://swiperjs.com/ -->
+            <div class="main-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="img/main_slide01.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/main_slide02.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/main_slide03.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="img/main_slide04.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="swiper-content">
+                    <!-- If we need pagination -->
+                    <strong>
+                        KAIST GRADUATE SCHOOL OF <br>
+                        GREEN GROWTH & SUSTAINABILITY   
+                    </strong>
+                    <div class="swiper-navigation-wrap">
+                        <!-- If we need navigation buttons -->
+                        <button class="swiper-prev">
+                            <img src="img/main_arrow.svg" alt="">
+                        </button>
+                        <button class="swiper-next">
+                            <img src="img/main_arrow.svg" alt="">
+                        </button>
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                    <span>
+                        Combining Science & Technology <br>
+                        with Policy and Finance to Achieve Carbon Neutrality
+                    </span>
+                    <div class="swiper-controls-wrap">
+                        <div class="swiper-pagination"></div>
+                        <button class="btn-play"></button>
+                        <button class="btn-stop"></button>
+                    </div>                   
+                </div>
+            </div>
+        </div>
+        <div class="quickmenu-wrap">
+            <a href="#">
+                <img src="./img/main_tab_icon01.png" alt="">
+                <span>입학안내</span>
+            </a>
+            <a href="#">
+                <img src="./img/main_tab_icon02.png" alt="">
+                <span>교육과정</span>
+            </a>
+            <a href="#">
+                <img src="./img/main_tab_icon03.png" alt="">
+                <span>연구소개</span>
+            </a>
+            <a href="#">
+                <img src="./img/main_tab_icon04.png" alt="">
+                <span>문의하기</span>
+            </a>
+        </div>
+        <section class="earth-wrap">
+            <hgroup>
+                <h2><span class="blind">ONLY ONE EARTH</span></h2>
+                <p>과학기술에 정책과 금융을 더해 <strong class="point-txt">탄소중립</strong>을 실현합니다.</p>
+            </hgroup>            
+            <p class="blind">녹색에너지 시스템, 자원순환기술시스템, ..., 필요한 설명은 블라인드에</p>
+            <div class="pc-img img-box"><img src="img/sec02_img.png" alt=""></div>
+            <div class="mo-img img-box">
+                <img src="img/sec02_img01.png" alt="">
+                <img src="img/sec02_img02.png" alt="">
+                <img src="img/sec02_img03.png" alt="">
+            </div>
+        </section>
+        <section class="program-wrap">
+            <div class="container">
+                <div class="program-content">
+                    <hgroup>
+                        <h2>PROGRAM</h2>
+                        <p>
+                            <span class="point-txt">KAIST GGGS</span>에서는 녹색성장과 지속가능성 문제해결을 위해 <br> 탄소중립기후기술 및 정책·금융에 대한 통섭적인 이해를 갖춘 <br> 국가 핵심인재를 양성합니다.
+                        </p>
+                    </hgroup>
+                    <!-- a[href="#"]*4>img+span -->
+                    <a href="#">
+                        <img src="img/sec03_tab01.png"><span>박사과정</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/sec03_tab02.png" alt=""><span>군학 프로그램</span>
+                    </a>
+                    <a href="#">
+                        <img src="img/sec03_tab03.png" alt=""><span>석사과정</span>
+                    </a>
+                    <div class="logo-item">
+                        <img src="img/sec03_thumb.png" alt="">
+                    </div>
+                    <a href="#">
+                        <img src="img/sec03_tab04.png" alt=""><span>외국인 전형</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section class="faculty-wrap">
+            <hgroup>
+                <h2>FACULTY</h2>
+                <p>우리는 탄소중립 난제를 해결하고 녹색성장을 이끌기 위해 모였습니다.</p>
+                <a href="#" class="main-link">교수진 안내</a>
+            </hgroup>
+            <div class="faculty-swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_01_crop_auto_fix_600_853.52.png" alt="">
+                        </div>
+                        <strong>이동만 교수</strong>
+                        <span>엣지 컴퓨팅, 사물인터넷, 장소성</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_10_crop_auto_fix_600_810.28.png" alt="">
+                        </div>
+                        <strong>이나래 교수</strong>
+                        <span>ESG 경영 전략, 기후 변화 정책</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_02_crop_auto_fix_600_736.89.png" alt="">
+                        </div>
+                        <strong>김상협 교수</strong>
+                        <span>국가탄소중립정책, 글로벌녹색성장전략</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_03_crop_auto_fix_600_804.64.png" alt="">
+                        </div>
+                        <strong>김소영 교수</strong>
+                        <span>연구개발정책, 에너지연구개발정책</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_04_crop_auto_fix_600_810.28.png" alt="">
+                        </div>
+                        <strong>김창익 교수</strong>
+                        <span>컴퓨터비전, 인공지능, 생태 AI</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_05_crop_auto_fix_600_743.04.png" alt="">
+                        </div>
+                        <strong>김형준 교수</strong>
+                        <span>기후과학, 기후변화영향평가</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_06_crop_auto_fix_600_857.28.png" alt="">
+                        </div>
+                        <strong>이동만 교수</strong>
+                        <span>엣지 컴퓨팅, 사물인터넷, 장소성</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_07_crop_auto_fix_600_810.28.png" alt="">
+                        </div>
+                        <strong>김형철 교수</strong>
+                        <span>기업정보공시, ESG공시, 기업합병</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_08_crop_auto_fix_600_859.95.png" alt="">
+                        </div>
+                        <strong>심상민 교수</strong>
+                        <span>기후변화 법 정책, 국제법 국제협상</span>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="thumb-img">
+                            <img src="img/faculty_09_crop_auto_fix_600_744.48.png" alt="">
+                        </div>
+                        <strong>엄지용 교수</strong>
+                        <span>에너지수요혁신, 기후금융리스크평가</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="news-wrap">
+            <div class="container">
+                <hgroup>
+                    <h2>NEWS</h2>
+                </hgroup>
+                <!-- 탭메뉴 구조 -->
+                <div class="tab-btns">
+                    <div class="btn-box">
+                        <button class="active">공지사항</button>
+                        <button>미디어</button>
+                        <button>학술정보</button>
+                        <button>교원채용</button>
+                    </div>
+                    <a href="#" class="more-link">더 많은 소식</a>
+                </div>
+                <div class="tab-contents">
+                    <!-- 
+                        - 게시판의 내용은 DB에서 불러옴.
+                        - 퍼블리싱 작업할 때는 더미텍스트를 사용하여 레이아웃 코딩을 해야됨.
+                        - 포트폴리오에는 진짜같은 텍스트와 이미지를 사용
+                    -->
+                    <div class="cont-box">
+                        <h3 class="blind">공지사항</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab03.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>"탄소중립을 살아가는 사람들"</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab04.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont-box">
+                        <h3 class="blind">미디어</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab03.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>"탄소중립을 살아가는 사람들"</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab04.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont-box">
+                        <h3 class="blind">학술정보</h3>
+                        <!-- <p>등록된 게시글이 없습니다.</p> -->
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab03.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>"탄소중립을 살아가는 사람들"</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab04.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[녹색성장지속가능대학원] 2025학년도 가을학기 입시설명회 현장스케치</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cont-box">
+                        <h3 class="blind">교원채용</h3>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/popup.jpg" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>아이 키우는데 온 마을이 필요···, 탄소잡는 KAIST 녹색대학원에 온 학문이 출동했다</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="thumb-img">
+                                        <img src="img/sec03_tab03.png" alt="">
+                                    </div>
+                                    <div class="news-bt">
+                                        <div class="news-txt">
+                                            <span class="news-cate">공지사항</span>
+                                            <p>[경향신문] 과학·사회·정책·경영·금융 다 녹여 ‘탄소중립’ 인재 키우는 대학원 탄생…카이스트 “세계 최초”</p>
+                                        </div>
+                                        <span class="date">2025.04.08</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="banner-wrap">
+            <div class="flow-content">
+                <img src="./img/rolling_img.svg" alt="">
+                <img src="./img/rolling_img.svg" alt="">
+                <img src="./img/rolling_img.svg" alt="">
+                <img src="./img/rolling_img.svg" alt="">
+            </div>
+            <div class="container">
+                <div class="banner-content">
+                    <h2 class="blind">입학안내</h2>
+                    <div class="txt-box">
+                        <p>녹색성장의 미래를 함께 만들어갈 당신을 기다립니다.</p>
+                        <p class="txt-big">GGGS와 함께하고 싶으신가요?</p>
+                    </div>
+                    <div class="progress-wrap">
+                        <img src="img/sec06_obj01.png" alt="">
+                        <div class="progress">
+                            <div class="bar"></div>
+                        </div>
+                        <img src="img/sec06_obj02.png" alt="">
+                    </div>
+                    <a href="#" class="main-link">입학안내</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <div class="container">
+            <!-- container는 가운데 정렬하는 용도로만 사용 -->
+            <div class="footer-links">
+                <div class="footer-menu">
+                    <a href="#">오시는 길</a>
+                    <a href="#">이메일 무단수집거부</a>
+                    <a href="#" target="_blank">개인정보처리방침</a>
+                </div>
+                <div class="family-link">
+                    <div class="family-site">
+                        <button>FAMILY SITES</button>
+                        <!-- ul>li*10>a[href=# target=_blank] -->
+                        <ul>
+                            <li><a href="#" target="_blank">디지털인문사회과학부</a></li>
+                            <li><a href="#" target="_blank">건설및환경공학과</a></li>
+                            <li><a href="#" target="_blank">과학기술정책대학원</a></li>
+                            <li><a href="#" target="_blank">기계공학부</a></li>
+                            <li><a href="#" target="_blank">기술경영학부</a></li>
+                            <li><a href="#" target="_blank">김재철AI대학원</a></li>
+                            <li><a href="#" target="_blank">디지털인문사회과학부</a></li>
+                            <li><a href="#" target="_blank">문술미래전략대학원</a></li>
+                            <li><a href="#" target="_blank">바이오및뇌공학과</a></li>
+                            <li><a href="#" target="_blank">산업및시스템공학과</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-sns">
+                        <!-- a[href="#" target="_blank"]*4>span.blind -->
+                        <a href="#" target="_blank"><span class="blind"></span></a>
+                        <a href="#" target="_blank"><span class="blind"></span></a>
+                        <a href="#" target="_blank"><span class="blind"></span></a>
+                        <a href="#" target="_blank"><span class="blind"></span></a>
+                    </div>
+                    <!-- 두 개 이상의 요소를 묶을때만 div 사용 -->
+                </div>
+            </div>
+            <div class="corp-info">
+                <a href="#" class="footer-logo"><img src="./img/logo.svg" alt="메인페이지로"></a>
+                <address>
+                    34141 대전광역시 유성구 대학로 291 한국과학기술원(KAIST) N5빌딩, 2129호
+                    <div>
+                        <span>TEL</span> 042-350-4162~4
+                        <span>E-mail</span> gggs@kaist.ac.kr
+                    </div>
+                </address>
+                <p class="copyright">&copy; 2023. KAIST GGGS. ALL RIGHT RESERVED.</p>
+                <!-- &copy; => 특수문자 엔티티코드 사용-->
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
